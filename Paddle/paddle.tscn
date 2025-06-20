@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l62s00s643kk"]
+
+[ext_resource type="Script" uid="uid://bovpogodkfk0h" path="res://Paddle/Paddle.cs" id="1_80tri"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gcht"]
+size = Vector2(32, 192)
+
+[node name="Paddle" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_80tri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3gcht")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -96.0
+offset_right = 16.0
+offset_bottom = 96.0
