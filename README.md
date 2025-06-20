@@ -29,60 +29,63 @@ This is a simple Pong game built with [Godot Engine](https://godotengine.org/) u
 You can also run and edit the project using [Visual Studio Code](https://code.visualstudio.com/):
 
 1. **Open the Project Folder in VS Code**
-    2. **Configure VS Code for Building & Debugging**
-        - Create a `.vscode` folder in your project root if it doesn't exist.
-        - Add your `tasks.json` file for building C# scripts:
-          ```json
-          {
-            "version": "2.0.0",
-            "tasks": [
-              {
-                "label": "build",
-                "type": "process",
-                "command": "dotnet",
-                "args": [
-                    "build"
-                ],
-                "problemMatcher": "$msCompile"
-              }
-            ]
-          }
-          ```
-        - Add your `launch.json` file for running and debugging:
-          ```json
-          {
-            "version": "0.2.0",
-            "configurations": [
-              {
-                "name": "Play",
-                "type": "coreclr",
-                "request": "launch",
-                "preLaunchTask": "build",
-                "program": "C:/Path/To/Godot.exe",
-                "args": [],
-                "cwd": "${workspaceFolder}",
-                "stopAtEntry": false,
-              }
-            ]
-          }
-          ```
-          > **Note:** Set the `"program"` field to the path of your Godot executable.
 
-    3. **Build & Run via VS Code**
-        - Press `Ctrl+Shift+B` to build the project.
-        - Press `F5` or select "Launch Godot" in the Run and Debug panel to start and debug your project directly from VS Code.
+2. **Configure VS Code for Building & Debugging**
+   - Create a `.vscode` folder in your project root if it doesn't exist.
+   - Add your `tasks.json` file for building C# scripts:
 
+     ```json
+     {
+       "version": "2.0.0",
+       "tasks": [
+         {
+           "label": "build",
+           "type": "process",
+           "command": "dotnet",
+           "args": [ "build" ],
+           "problemMatcher": "$msCompile"
+         }
+       ]
+     }
+     ```
 
-2. **Install the C# Extension**
-    - Install the [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for syntax highlighting and IntelliSense.
+   - Add your `launch.json` file for running and debugging:
+
+     ```json
+     {
+       "version": "0.2.0",
+       "configurations": [
+         {
+           "name": "Play",
+           "type": "coreclr",
+           "request": "launch",
+           "preLaunchTask": "build",
+           "program": "C:/Path/To/Godot.exe",
+           "args": [],
+           "cwd": "${workspaceFolder}",
+           "stopAtEntry": false
+         }
+       ]
+     }
+     ```
+
+     > **Note:** Set the `"program"` field to the path of your Godot executable.
+
+3. **Build & Run via VS Code**
+   - Press `Ctrl+Shift+B` to build the project.
+   - Press `F5` or use the Run panel to start debugging.
+
+4. **Install the C# Extension**
+   - Install the [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for IntelliSense and syntax highlighting.
+
 
 
 
 
 ## Project Structure
 
-- `Main.tscn` — Main scene for the game.
-- `Paddle.cs`, `Ball.cs` — C# scripts for game logic.
+- `Main.tscn` - Main scene for the game.
+- `Paddle.cs`, `Ball.cs` - C# scripts for game logic.
 
 ## Learning Goals
 
