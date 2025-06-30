@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvvd3880kwbt"]
+[gd_scene load_steps=6 format=3 uid="uid://bvvd3880kwbt"]
 
+[ext_resource type="Script" uid="uid://dxe03yj054v4r" path="res://src/Main.cs" id="1_5q4o7"]
 [ext_resource type="PackedScene" uid="uid://l62s00s643kk" path="res://Paddle/paddle.tscn" id="1_eewff"]
 [ext_resource type="PackedScene" uid="uid://b8sl35qko002f" path="res://Ball/ball.tscn" id="2_gh0ne"]
 
@@ -10,6 +11,7 @@ size = Vector2(1152, 16)
 size = Vector2(1152, 16)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_5q4o7")
 
 [node name="Player 1" parent="." instance=ExtResource("1_eewff")]
 position = Vector2(64, 320)
@@ -35,3 +37,25 @@ position = Vector2(576, 656)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
 shape = SubResource("RectangleShape2D_5q4o7")
+
+[node name="Player1Score" type="Label" parent="."]
+offset_left = 296.0
+offset_top = 72.0
+offset_right = 344.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Player2Score" type="Label" parent="."]
+offset_left = 808.0
+offset_top = 72.0
+offset_right = 856.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 30
+
+[node name="StartGame" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 512.0
+offset_right = 864.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 60
+text = "Press Space to Start"
