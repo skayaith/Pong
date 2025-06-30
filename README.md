@@ -85,7 +85,7 @@ You can also run and edit the project using [Visual Studio Code](https://code.vi
 ## Project Structure
 
 - `Main.tscn` - Main scene for the game.
-- `Paddle.cs`, `Ball.cs` - C# scripts for game logic.
+- `Main.cs`, `Paddle.cs`, `Ball.cs` - C# scripts for game logic.
 
 ## Learning Goals
 
