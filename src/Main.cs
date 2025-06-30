@@ -26,16 +26,18 @@ public partial class Main : Node2D
         startGameLabel = GetNode<Label>("StartGame");
         player1ScoreLabel = GetNode<Label>("Player1Score");
         player2ScoreLabel = GetNode<Label>("Player2Score");
-        UpdateScoreLabel(player1ScoreLabel, player1Score);
-        UpdateScoreLabel(player2ScoreLabel, player2Score);
+        player1ScoreLabel.Text = player1Score.ToString();
+        player2ScoreLabel.Text = player2Score.ToString();
     }
 
-    private void UpdateScoreLabel(Label playerLabel, int score)
+    private void ProcessScore(ref int score, Label playerLabel)
     {
+        score++;
         playerLabel.Text = score.ToString();
+        GameActive = false;
+        startGameLabel.Visible = true;
+        ball.ResetBall();
     }
-
-
 
 
     public override void _Process(double delta)
@@ -52,19 +54,11 @@ public partial class Main : Node2D
         {
             if (ball.GlobalPosition.X < leftBound)
             {
-                player2Score++;
-                UpdateScoreLabel(player2ScoreLabel, player2Score);
-                GameActive = false;
-                startGameLabel.Visible = true;
-                ball.ResetBall();
+                ProcessScore(ref player2Score, player2ScoreLabel);
             }
             else if (ball.GlobalPosition.X > rightBound)
             {
-                player1Score++;
-                UpdateScoreLabel(player1ScoreLabel, player1Score);
-                GameActive = false;
-                startGameLabel.Visible = true;
-                ball.ResetBall();
+                ProcessScore(ref player1Score, player1ScoreLabel);
             }
         }
     }
